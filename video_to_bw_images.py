@@ -18,7 +18,7 @@ while(True):
     ret, frame = vid.read()
     if not ret:
         break
-    if curr_frame % hop == 0:
+    if curr_frame % hop == 0 and curr_frame > 100:
         name = os.path.join("images", "image_" + str(frame_number) + EXTENSION)
         cv2.imwrite(name, frame)
         frame_number = frame_number + 1
